@@ -13,21 +13,28 @@ class SoundMinDistFeedback:
         self.pub = rospy.Publisher('/mobile_base/commands/sound', Sound, queue_size=10)
 
         self.msg_sound = Sound()
-        self.msg_sound.value = 3
+        self.msg_sound.value = 2
+
+        self.distance = 1
         
         # Then subscriber
         rospy.Subscriber('/min_dist', Float32, self.callback)
         rospy.spin() 
 
+        self.notifSound()
+
 
     def callback(self, data):
         #rospy.loginfo(data.data)
-        self.notifSound(data.data)
+        self.setDistance(data.data)
         
-    def notifSound(self, distance):
+    def setDistance(self, distance):
+        self.distance = distance
 
-        self.pub.publish(self.msg_sound)
-        time.sleep(distance)
+    def notifSound(self):
+        while not rospy.is_shutdown(): 
+            self.pub.publish(self.msg_sound)
+            time.sleep(self.distance)
 
 if __name__ == '__main__':
     try:
