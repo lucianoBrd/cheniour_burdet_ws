@@ -19,10 +19,9 @@ class SoundMinDistFeedback:
         
         # Then subscriber
         rospy.Subscriber('/min_dist', Float32, self.callback)
-        rospy.spin() 
-
+        
         self.notifSound()
-
+        
 
     def callback(self, data):
         #rospy.loginfo(data.data)
@@ -34,10 +33,11 @@ class SoundMinDistFeedback:
     def notifSound(self):
         while not rospy.is_shutdown(): 
             self.pub.publish(self.msg_sound)
-            time.sleep(self.distance)
+            time.sleep(self.distance / 2)
 
 if __name__ == '__main__':
     try:
-        SoundMinDistFeedback()
+        S = SoundMinDistFeedback()
+        rospy.spin() 
     except rospy.ROSInterruptException:
         pass
