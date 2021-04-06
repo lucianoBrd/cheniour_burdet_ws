@@ -60,3 +60,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/collision" TYPE PROGRAM FILES "/home/luciano/ROB/cheniour_burdet_ws/build/collision/catkin_generated/installspace/min_dist_detection.py")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/collision" TYPE PROGRAM FILES "/home/luciano/ROB/cheniour_burdet_ws/build/collision/catkin_generated/installspace/sound_min_dist_feedback.py")
+endif()
+

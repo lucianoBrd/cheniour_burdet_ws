@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="start_collision_min">
+        <node pkg="collision" name="collision_warning" type="collision_warning.py" output="screen"/>
+        <node pkg="collision" name="min_dist_detection" type="min_dist_detection.py"/>
+        <node pkg="collision" name="sound_min_dist_feedback" type="sound_min_dist_feedback.py"/>
+        <node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py"/>
+
+        <remap from="/cmd_vel_mux/input/teleop" to="/cmd_vel_safe_input"/>
+        <remap from="/cmd_vel_safe_output" to="/cmd_vel_mux/input/navi"/>
+
+        <node pkg="collision" name="safe_vel_cmd_crt" type="safe_vel_cmd_crt.py"/>
+    </group>
+</launch>
