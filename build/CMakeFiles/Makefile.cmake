@@ -28,6 +28,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/luciano/ROB/cheniour_burdet_ws/src/collision/CMakeLists.txt"
   "/home/luciano/ROB/cheniour_burdet_ws/src/collision/package.xml"
   "/home/luciano/ROB/cheniour_burdet_ws/src/collision/scripts/collision_warning.py"
+  "/home/luciano/ROB/cheniour_burdet_ws/src/collision/scripts/min_dist_detection.py"
   "/home/luciano/ROB/cheniour_burdet_ws/src/kobuki_msgs/CMakeLists.txt"
   "/home/luciano/ROB/cheniour_burdet_ws/src/kobuki_msgs/action/AutoDocking.action"
   "/home/luciano/ROB/cheniour_burdet_ws/src/kobuki_msgs/package.xml"

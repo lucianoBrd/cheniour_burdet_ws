@@ -11,8 +11,8 @@ class CollisionWarning:
         self.pub = rospy.Publisher('/mobile_base/commands/sound', Sound, queue_size=10)
 
         self.msg_sound = Sound()
-        self.msg_sound.value = 2
-        self.pub.publish(self.msg_sound)
+        self.msg_sound.value = 6
+        
         rospy.Subscriber('/mobile_base/events/bumper', BumperEvent, self.callback)
         rospy.spin() 
 
