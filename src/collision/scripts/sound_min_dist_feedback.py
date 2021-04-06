@@ -42,7 +42,7 @@ class SoundMinDistFeedback:
 
             if self.msg_led.value == 0:
                 self.msg_led.value = 1
-            else
+            else:
                 self.msg_led.value = 0
 
 if __name__ == '__main__':

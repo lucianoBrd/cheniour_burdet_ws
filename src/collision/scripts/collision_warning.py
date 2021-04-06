@@ -19,7 +19,7 @@ class CollisionWarning:
 
     def callback(self,data):
         if data.state == 1:
-            rospy.loginfo("Bumper est enfoncé")
+            rospy.loginfo("Bumper est enfonce")
             self.pub.publish(self.msg_sound)
 
 
